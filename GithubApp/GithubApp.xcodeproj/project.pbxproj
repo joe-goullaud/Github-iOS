@@ -12,7 +12,6 @@
 		FE1DA0A21794F07800D371A1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE1DA0A11794F07800D371A1 /* CoreGraphics.framework */; };
 		FE1DA0A81794F07800D371A1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FE1DA0A61794F07800D371A1 /* InfoPlist.strings */; };
 		FE1DA0AA1794F07800D371A1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1DA0A91794F07800D371A1 /* main.m */; };
-		FE1DA0AE1794F07800D371A1 /* GHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1DA0AD1794F07800D371A1 /* GHAppDelegate.m */; };
 		FE1DA0B01794F07800D371A1 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FE1DA0AF1794F07800D371A1 /* Default.png */; };
 		FE1DA0B21794F07800D371A1 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE1DA0B11794F07800D371A1 /* Default@2x.png */; };
 		FE1DA0B41794F07800D371A1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE1DA0B31794F07800D371A1 /* Default-568h@2x.png */; };
@@ -44,6 +43,7 @@
 		FE1DA2881794F34700D371A1 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE1DA2871794F34700D371A1 /* Security.framework */; };
 		FE1DA28A1794F35100D371A1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE1DA2891794F35100D371A1 /* CoreData.framework */; };
 		FE1DA28C1794F3D400D371A1 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE1DA28B1794F3D400D371A1 /* MobileCoreServices.framework */; };
+		FE1DA2981794F4FA00D371A1 /* GHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1DA28F1794F4FA00D371A1 /* GHAppDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,8 +55,6 @@
 		FE1DA0A71794F07800D371A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FE1DA0A91794F07800D371A1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FE1DA0AB1794F07800D371A1 /* GithubApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GithubApp-Prefix.pch"; sourceTree = "<group>"; };
-		FE1DA0AC1794F07800D371A1 /* GHAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GHAppDelegate.h; sourceTree = "<group>"; };
-		FE1DA0AD1794F07800D371A1 /* GHAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GHAppDelegate.m; sourceTree = "<group>"; };
 		FE1DA0AF1794F07800D371A1 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		FE1DA0B11794F07800D371A1 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		FE1DA0B31794F07800D371A1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -117,6 +115,8 @@
 		FE1DA2871794F34700D371A1 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		FE1DA2891794F35100D371A1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		FE1DA28B1794F3D400D371A1 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		FE1DA28E1794F4FA00D371A1 /* GHAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHAppDelegate.h; sourceTree = "<group>"; };
+		FE1DA28F1794F4FA00D371A1 /* GHAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHAppDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,8 +170,11 @@
 		FE1DA0A31794F07800D371A1 /* GithubApp */ = {
 			isa = PBXGroup;
 			children = (
-				FE1DA0AC1794F07800D371A1 /* GHAppDelegate.h */,
-				FE1DA0AD1794F07800D371A1 /* GHAppDelegate.m */,
+				FE1DA28D1794F4FA00D371A1 /* Application */,
+				FE1DA2901794F4FA00D371A1 /* Data */,
+				FE1DA2941794F4FA00D371A1 /* Utils */,
+				FE1DA2951794F4FA00D371A1 /* Views */,
+				FE1DA2971794F4FA00D371A1 /* ViewControllers */,
 				FE1DA0A41794F07800D371A1 /* Supporting Files */,
 			);
 			path = GithubApp;
@@ -295,6 +298,75 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		FE1DA28D1794F4FA00D371A1 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				FE1DA28E1794F4FA00D371A1 /* GHAppDelegate.h */,
+				FE1DA28F1794F4FA00D371A1 /* GHAppDelegate.m */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		FE1DA2901794F4FA00D371A1 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				FE1DA2911794F4FA00D371A1 /* Managers */,
+				FE1DA2921794F4FA00D371A1 /* Model */,
+				FE1DA2931794F4FA00D371A1 /* WebServices */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		FE1DA2911794F4FA00D371A1 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		FE1DA2921794F4FA00D371A1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FE1DA2931794F4FA00D371A1 /* WebServices */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WebServices;
+			sourceTree = "<group>";
+		};
+		FE1DA2941794F4FA00D371A1 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		FE1DA2951794F4FA00D371A1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FE1DA2961794F4FA00D371A1 /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FE1DA2961794F4FA00D371A1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		FE1DA2971794F4FA00D371A1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -362,7 +434,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE1DA0AA1794F07800D371A1 /* main.m in Sources */,
-				FE1DA0AE1794F07800D371A1 /* GHAppDelegate.m in Sources */,
 				FE1DA19C1794F21000D371A1 /* RZDataImporter.m in Sources */,
 				FE1DA19D1794F21000D371A1 /* RZDataManager.m in Sources */,
 				FE1DA19E1794F21000D371A1 /* NSDictionary+NonNSNull.m in Sources */,
@@ -388,6 +459,7 @@
 				FE1DA2541794F30300D371A1 /* RZFilteredCollectionList.m in Sources */,
 				FE1DA2551794F30300D371A1 /* RZObserverCollection.m in Sources */,
 				FE1DA2561794F30300D371A1 /* RZSortedCollectionList.m in Sources */,
+				FE1DA2981794F4FA00D371A1 /* GHAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
