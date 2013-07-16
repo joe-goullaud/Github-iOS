@@ -1,0 +1,9 @@
+[submodule "GithubApp/External/RZCollectionList"]
+	path = GithubApp/External/RZCollectionList
+	url = git@github.com:Raizlabs/RZCollectionList.git
+[submodule "GithubApp/External/WebServiceManager"]
+	path = GithubApp/External/WebServiceManager
+	url = git@github.com:Raizlabs/WebServiceManager.git
+[submodule "GithubApp/External/RZDataManager"]
+	path = GithubApp/External/RZDataManager
+	url = git@github.com:Raizlabs/RZDataManager.git
