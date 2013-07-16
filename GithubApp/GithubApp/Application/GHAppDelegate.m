@@ -7,6 +7,8 @@
 //
 
 #import "GHAppDelegate.h"
+#import "GHRepositoriesViewController.h"
+#import "GHLoginViewController.h"
 
 @implementation GHAppDelegate
 
@@ -14,8 +16,19 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    GHRepositoriesViewController *reposVC = [[GHRepositoriesViewController alloc] init];
+    
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:reposVC];
+    
+    self.window.rootViewController = navController;
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    GHLoginViewController *loginVC = [[GHLoginViewController alloc] init];
+    
+    [navController presentViewController:loginVC animated:NO completion:NULL];
     return YES;
 }
 

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>getIssuesForRepoFullName</key>
+	<dict>
+		<key>URL</key>
+		<string>repos/%@/issues</string>
+		<key>Method</key>
+		<string>GET</string>
+		<key>BodyType</key>
+		<string>URLEncoded</string>
+		<key>ExpectedResultType</key>
+		<string>JSON</string>
+	</dict>
+	<key>getReposForOrg</key>
+	<dict>
+		<key>URL</key>
+		<string>orgs/%@/repos</string>
+		<key>Method</key>
+		<string>GET</string>
+		<key>BodyType</key>
+		<string>URLEncoded</string>
+		<key>ExpectedResultType</key>
+		<string>JSON</string>
+	</dict>
+	<key>getReposForUser</key>
+	<dict>
+		<key>URL</key>
+		<string>users/%@/repos</string>
+		<key>Method</key>
+		<string>GET</string>
+		<key>BodyType</key>
+		<string>URLEncoded</string>
+		<key>ExpectedResultType</key>
+		<string>JSON</string>
+	</dict>
+</dict>
+</plist>
