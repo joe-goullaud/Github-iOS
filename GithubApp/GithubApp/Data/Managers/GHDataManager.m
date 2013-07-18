@@ -11,6 +11,7 @@
 #import "RZCollectionList.h"
 
 #import "Repository.h"
+#import "Issue.h"
 
 #import "NSFetchRequest+RZCreationHelpers.h"
 
@@ -101,6 +102,58 @@
                     repo.fullName = [repoData objectForKey:@"full_name"];
                     repo.repoDescription = [repoData objectForKey:@"description"];
                     repo.org = org;
+                }];
+                
+            } completion:^{
+                
+                if (completion)
+                {
+                    completion(YES, nil);
+                }
+                
+            }];
+        }
+        else if (completion)
+        {
+            completion(NO, error);
+        }
+        
+    }];
+    
+    return reposList;
+}
+
+- (id<RZCollectionList>)issuesForRepoFullName:(NSString*)repoFullName completion:(GHDataManagerCompletionBlock)completion
+{
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Issue" sortDescriptorKey:@"issueId" ascending:YES predicateFormat:@"repository.fullName == %@", repoFullName];
+    NSFetchedResultsController *reposController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
+                                                                                      managedObjectContext:self.managedObjectContext
+                                                                                        sectionNameKeyPath:nil
+                                                                                                 cacheName:nil];
+    RZFetchedCollectionList *reposList = [[RZFetchedCollectionList alloc] initWithFetchedResultsController:reposController];
+    
+    [[GHWebServiceManager defaultManager] requestIssuesForRepoFullName:repoFullName  completion:^(BOOL succeeded, id data, NSError *error, RZWebServiceRequest *request) {
+        
+        if ([data isKindOfClass:[NSArray class]])
+        {
+            [self importInBackgroundUsingBlock:^(NSManagedObjectContext *moc) {
+                
+                Repository *repo = [self objectForEntity:@"Repository" withValue:repoFullName forKeyPath:@"fullName" usingMOC:moc create:NO];
+                
+                [data enumerateObjectsUsingBlock:^(NSDictionary *issueData, NSUInteger idx, BOOL *stop) {
+                    Issue *issue = [self objectForEntity:@"Issue"
+                                                   withValue:[issueData objectForKey:@"number"]
+                                                  forKeyPath:@"issueId"
+                                                    usingMOC:moc
+                                                      create:YES];
+                    
+                    issue.issueId = [issueData objectForKey:@"number"];
+                    issue.title = [issueData objectForKey:@"title"];
+                    issue.issueDescription = [issueData objectForKey:@"body"];
+                    
+                    issue.repository = repo;
+                    
+                    
                 }];
                 
             } completion:^{

@@ -7,32 +7,45 @@
 //
 
 #import "GHIssuesViewController.h"
+#import "GHDataManager.h"
+#import "RZCollectionList.h"
+#import "Issue.h"
 
-@interface GHIssuesViewController ()
+@interface GHIssuesViewController () <RZCollectionListTableViewDataSourceDelegate>
+
+@property (nonatomic, strong) id<RZCollectionList> issuesList;
+@property (nonatomic, strong) RZCollectionListTableViewDataSource *dataSource;
 
 @end
 
 @implementation GHIssuesViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.issuesList = [[GHDataManager defaultManager] issuesForRepoFullName:self.repoFullName completion:NULL];
+    
+    self.dataSource = [[RZCollectionListTableViewDataSource alloc] initWithTableView:self.tableView collectionList:self.issuesList delegate:self];
 }
 
-- (void)didReceiveMemoryWarning
+#pragma mark - RZCollectionListTableViewDataSourceDelegate
+
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForObject:(Issue*)issue atIndexPath:(NSIndexPath *)indexPath
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"IssueCellId"];
+    
+    if (nil == cell)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"IssueCellId"];
+    }
+    
+    cell.textLabel.text = issue.title;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@",issue.issueId];
+    
+    return cell;
 }
+
 
 @end

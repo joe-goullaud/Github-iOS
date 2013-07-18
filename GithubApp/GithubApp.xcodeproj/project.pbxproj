@@ -58,7 +58,8 @@
 		FE1DA2BC17954A1A00D371A1 /* GithubAppWebService.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE1DA2BB17954A1A00D371A1 /* GithubAppWebService.plist */; };
 		FE1DA2BF17954EB200D371A1 /* NSString+Crypto.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1DA2BE17954EB200D371A1 /* NSString+Crypto.m */; };
 		FE1DA2C217954FA000D371A1 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1DA2C117954FA000D371A1 /* NSData+Base64.m */; };
-		FE1DA2C5179553B500D371A1 /* Repository.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1DA2C4179553B500D371A1 /* Repository.m */; };
+		FE1DA2C8179583BF00D371A1 /* Repository.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1DA2C7179583BF00D371A1 /* Repository.m */; };
+		FE1DA2CB179583BF00D371A1 /* Issue.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1DA2CA179583BF00D371A1 /* Issue.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -154,8 +155,10 @@
 		FE1DA2BE17954EB200D371A1 /* NSString+Crypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Crypto.m"; sourceTree = "<group>"; };
 		FE1DA2C017954FA000D371A1 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
 		FE1DA2C117954FA000D371A1 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
-		FE1DA2C3179553B500D371A1 /* Repository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Repository.h; sourceTree = "<group>"; };
-		FE1DA2C4179553B500D371A1 /* Repository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Repository.m; sourceTree = "<group>"; };
+		FE1DA2C6179583BF00D371A1 /* Repository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Repository.h; sourceTree = "<group>"; };
+		FE1DA2C7179583BF00D371A1 /* Repository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Repository.m; sourceTree = "<group>"; };
+		FE1DA2C9179583BF00D371A1 /* Issue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Issue.h; sourceTree = "<group>"; };
+		FE1DA2CA179583BF00D371A1 /* Issue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Issue.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -368,9 +371,11 @@
 		FE1DA2921794F4FA00D371A1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FE1DA2C6179583BF00D371A1 /* Repository.h */,
+				FE1DA2C9179583BF00D371A1 /* Issue.h */,
+				FE1DA2CA179583BF00D371A1 /* Issue.m */,
+				FE1DA2C7179583BF00D371A1 /* Repository.m */,
 				FE1DA29F1795023500D371A1 /* GithubAppModel.xcdatamodeld */,
-				FE1DA2C3179553B500D371A1 /* Repository.h */,
-				FE1DA2C4179553B500D371A1 /* Repository.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -537,7 +542,8 @@
 				FE1DA2B9179505A000D371A1 /* GHIssueDetailsViewController.m in Sources */,
 				FE1DA2BF17954EB200D371A1 /* NSString+Crypto.m in Sources */,
 				FE1DA2C217954FA000D371A1 /* NSData+Base64.m in Sources */,
-				FE1DA2C5179553B500D371A1 /* Repository.m in Sources */,
+				FE1DA2C8179583BF00D371A1 /* Repository.m in Sources */,
+				FE1DA2CB179583BF00D371A1 /* Issue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -652,6 +658,7 @@
 				FE1DA0B91794F07800D371A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

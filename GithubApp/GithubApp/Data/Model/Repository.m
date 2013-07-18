@@ -11,11 +11,12 @@
 
 @implementation Repository
 
-@dynamic repoId;
-@dynamic name;
 @dynamic fullName;
-@dynamic repoDescription;
-@dynamic user;
+@dynamic name;
 @dynamic org;
+@dynamic repoDescription;
+@dynamic repoId;
+@dynamic user;
+@dynamic issues;
 
 @end

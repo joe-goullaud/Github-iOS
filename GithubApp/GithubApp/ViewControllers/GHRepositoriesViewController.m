@@ -7,6 +7,7 @@
 //
 
 #import "GHRepositoriesViewController.h"
+#import "GHIssuesViewController.h"
 #import "RZCollectionList.h"
 #import "GHDataManager.h"
 #import "Repository.h"
@@ -58,7 +59,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //TODO: Push to IssuesVC
+    GHIssuesViewController *issuesVC = [[GHIssuesViewController alloc] init];
+    
+    Repository *repo = [self.reposList objectAtIndexPath:indexPath];
+    
+    issuesVC.repoFullName = repo.fullName;
+    
+    [self.navigationController pushViewController:issuesVC animated:YES];
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }

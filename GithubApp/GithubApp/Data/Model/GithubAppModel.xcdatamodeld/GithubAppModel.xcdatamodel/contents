@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12E55" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Issue" representedClassName="Issue" syncable="YES">
+        <attribute name="isOpen" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="issueDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="issueId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="repository" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Repository" inverseName="issues" inverseEntity="Repository" syncable="YES"/>
+    </entity>
     <entity name="Repository" representedClassName="Repository" syncable="YES">
         <attribute name="fullName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -7,8 +14,10 @@
         <attribute name="repoDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="repoId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="user" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="issues" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Issue" inverseName="repository" inverseEntity="Issue" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Repository" positionX="160" positionY="192" width="128" height="135"/>
+        <element name="Repository" positionX="160" positionY="192" width="128" height="150"/>
+        <element name="Issue" positionX="160" positionY="192" width="128" height="120"/>
     </elements>
 </model>
